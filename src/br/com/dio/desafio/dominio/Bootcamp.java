@@ -16,6 +16,7 @@ public class Bootcamp {
     
     private Set<Dev> devsInscritos = new HashSet<>();
     private Set<Conteudo> conteudos = new LinkedHashSet<>();
+    
 	public String getNome() {
 		return nome;
 	}
@@ -46,6 +47,14 @@ public class Bootcamp {
 	public LocalDate getDataFinal() {
 		return dataFinal;
 	}
+	
+	
+	@Override
+	public String toString() {
+		return "Bootcamp [nome=" + nome + ", descricao=" + descricao + ", dataInicial=" + dataInicial + ", dataFinal="
+				+ dataFinal + ", devsInscritos=" + devsInscritos + ", conteudos=" + conteudos + "]";
+	}
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(conteudos, dataFinal, dataInicial, descricao, devsInscritos, nome);
