@@ -12,15 +12,18 @@ public class Dev {
 	private Set<Conteudo> conteudosConcluidos = new LinkedHashSet<>();
 	
 	public void inscreverBootcam(Bootcamp bootcamp) {
-		
+		this.conteudosInscritos.addAll(bootcamp.getConteudos());
 	}
 	
 	public void progresso() {
 		
 	}
 	
-	public void calcularTotalXP() {
-		
+	public double calcularTotalXP() {
+		return this.conteudosConcluidos
+                .stream()
+                .mapToDouble(Conteudo::calcularXP)
+                .sum();
 	}
 
 	public String getNome() {
